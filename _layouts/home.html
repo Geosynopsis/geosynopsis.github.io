@@ -1,0 +1,89 @@
+---
+layout: default
+---
+<div class="col-sm-5">
+    <div class="home">
+
+        <h2 class="h2">Posts</h2>
+
+        {{ content }}
+
+        <div class="post-list">
+            {% for post in paginator.posts %}
+            <div class="card" style="margin-bottom: 1vh">
+                <div class="post-title-image">
+                    {% if post.title_image %}
+                    <img class="card-img-top" src="{{post.title_image | relative_url}}">
+                    {% else %}
+                    <img class="card-img-top" src="{{site.default_title_image | relative_url}}">
+                    {% endif %}
+                </div>
+                <div class="card-body">
+                    {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+                    <span class="post-meta">{{post.date | date: date_format}}</span>
+                    <h2 class="card-title"><a class="post-link" href="{{ post.url | relative_url }}">{{ post.title |
+                        escape }}</a></h2>
+                    <p class="card-text">{{ post.excerpt }}</p>
+                    <a href="{{post.url | relative_url}}" class="btn btn-outline-primary btn-lg" role="button"
+                       style="float: right">
+                        More...
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Pagination links -->
+        <nav aria-label="Page navigation example" style="float: right">
+            <ul class="pagination">
+                {% if paginator.previous_page %}
+                <li class="page-item">
+                    <a class="page-link" href="{{ paginator.previous_page_path }}" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                </li>
+                {% else %}
+                <li class="page-item page-link">
+                    <span aria-hidden="true">&laquo;</span>
+                    <span class="sr-only">Previous</span>
+                </li>
+                {% endif %}
+                <li class="page-item page-link">Page: {{ paginator.page }} of {{ paginator.total_pages }}</li>
+                {% if paginator.next_page %}
+                <li class="page-item">
+                    <a class="page-link" href="{{ paginator.next_page_path }}" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </li>
+                {% else %}
+                <li class="page-item page-link">
+                    <span aria-hidden="true">&raquo;</span>
+                    <span class="sr-only">Next</span>
+                </li>
+                {% endif %}
+            </ul>
+        </nav>
+
+        <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+
+    </div>
+</div>
+<div class="col-sm-2">
+    <div class="main-sidebar">
+        <div class="card">
+            <a class="twitter-timeline" href="https://twitter.com/geosynopsis?ref_src=twsrc%5Etfw" data-tweet-limit="2">Tweets
+                by abheeman</a>
+        </div>
+        {% for category in site.categories %}
+        <div class="card">
+            <div class="card-title">
+                {{category[0]}}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+
