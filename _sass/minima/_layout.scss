@@ -109,7 +109,7 @@
 .site-footer {
   border-top: 1px solid $grey-color-light;
   padding: $spacing-unit 0;
-  background: #DAE2EA;;
+  background: #DAE2EA;
 }
 
 .footer-heading {
@@ -214,6 +214,22 @@
   position: sticky;
   position: -webkit-sticky;
   top: 10vh;
+}
+.category-wrapper {
+  margin-top: 0.5vh;
+}
+.category-title {
+  height: 5vh;
+  padding: 1vh;
+  background: #DAE2EA;
+  text-align: center;
+}
+.category-card {
+  padding: 0.5vh;
+  margin-top: 0.5vh;
+}
+.category-card-title {
+  text-transform: uppercase;
 }
 
 /**

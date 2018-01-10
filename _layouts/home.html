@@ -76,14 +76,26 @@ layout: default
             <a class="twitter-timeline" href="https://twitter.com/geosynopsis?ref_src=twsrc%5Etfw" data-tweet-limit="2">Tweets
                 by abheeman</a>
         </div>
-        {% for category in site.categories %}
-        <div class="card">
-            <div class="card-title">
-                {{category[0]}}
-            </div>
-        </div>
-        {% endfor %}
-    </div>
 
+        <div class="category-wrapper">
+            <div class="category-title">
+                <h4 class="h4">Post by Categories</h4>
+            </div>
+            {% for category in site.categories %}
+            <div class="card category-card">
+                <div class="card-title category-card-title">
+                    {{category[0]}}
+                </div>
+                <div class="card-text">
+                    <ul>
+                        {% for post in category[1] %}
+                        <li><a href="{{post.url | relative_url}}">{{post.title}}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
 </div>
 
