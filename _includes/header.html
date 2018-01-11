@@ -6,11 +6,20 @@
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top site-nav-wrapper">
     <div class="row align-items-center justify-content-center" style="width: 100%">
         <div class="col-sm-2">
-            <h2><a class="navbar-brand" href="{{'/' | relative_url }}">GeoSynopsiss</a></h2>
+            <div class="row align-items-center">
+                <div class="col-sm-3">
+                {% include site-logo.svg%}
+                </div>
+                <div class="col-sm-9">
+                    <h1 class="h1"><a class="navbar-brand" href="{{'/' | relative_url }}">{{site.title}}</a></h1>
+                </div>
+            </div>
+
         </div>
         <div class="col-sm-5">
             {% if page_paths %}
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
