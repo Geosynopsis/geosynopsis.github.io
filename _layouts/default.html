@@ -1,20 +1,18 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+<html lang="{{ page.lang | default: site.lang | default: " en" }}">
 
-  {% include head.html %}
+{% include head.html %}
 
-  <body>
-
-  {% include header.html %}
-  <div class="container-fluid" style="padding-top: 10vh;">
+<body>
+{% include header.html %}
+<div class="container-fluid" style="padding-top: 10vh;">
     <div class="row justify-content-center">
-          {{ content }}
-      </div>
+        {{ content }}
     </div>
-  </div>
+</div>
 
-    {% include footer.html %}
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-  </body>
+{% include footer.html %}
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</body>
 
 </html>

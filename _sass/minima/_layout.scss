@@ -3,11 +3,12 @@
  */
 .site-header {
   border-top: 5px solid $grey-color-dark;
-  border-bottom: 1px solid $grey-color-light;
   min-height: $spacing-unit * 1.865;
 
   // Positioning context for the mobile navigation icon
   position: relative;
+  max-height: 20vh;
+  overflow: hidden;
 }
 
 .site-title {
@@ -24,6 +25,13 @@
   }
 }
 
+.banner-img {
+  width: 100%;
+}
+.site-nav-wrapper {
+  background: $brand-color;
+  border-bottom: 1px solid $grey-color-light;
+}
 
 .site-nav {
   float: right;
@@ -213,22 +221,25 @@
 .main-sidebar {
   position: sticky;
   position: -webkit-sticky;
-  top: 10vh;
+  top: 7vh;
 }
 .category-wrapper {
   margin-top: 0.5vh;
 }
 .category-title {
-  height: 5vh;
+  min-height: 5vh;
   padding: 1vh;
   background: #DAE2EA;
   text-align: center;
+  color: $brand-color;
 }
 .category-card {
   padding: 0.5vh;
   margin-top: 0.5vh;
 }
 .category-card-title {
+  margin: 0.5rem;
+  color: $brand-color;
   text-transform: uppercase;
 }
 
@@ -275,4 +286,8 @@
       @include relative-font-size(1.125);
     }
   }
+}
+
+.social-icon {
+  color: $brand-color;
 }

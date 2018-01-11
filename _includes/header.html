@@ -1,36 +1,29 @@
 <header class="site-header" role="banner">
     {% assign default_paths = site.pages | map: "path" %}
     {% assign page_paths = site.header_pages | default: default_paths %}
-
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <span><h3><a class="navbar-brand" href="{{'/' | relative_url }}">GeoSynopsiss</a></h3></span>
-
-        {% if page_paths %}
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                {% for path in page_paths %}
-                {% assign my_page = site.pages | where: "path", path | first %}
-                {% if my_page.title %}
-                <a class="nav-item nav-link" href="{{my_page.url | relative_url}}">{{ my_page.title | escape}}
-                    <span class="sr-only">(current)</span></a>
-                {% endif %}
-                {% endfor %}
-            </div>
-        </div>
-        <div>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-        </div>
-        {% endif %}
-    </nav>
-
-
+    <img class="banner-img" src="/assets/images/home-bg.jpg">
 </header>
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top site-nav-wrapper">
+    <div class="row align-items-center justify-content-center" style="width: 100%">
+        <div class="col-sm-2">
+            <h2><a class="navbar-brand" href="{{'/' | relative_url }}">GeoSynopsiss</a></h2>
+        </div>
+        <div class="col-sm-5">
+            {% if page_paths %}
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ml-auto">
+                    {% for path in page_paths %}
+                    {% assign my_page = site.pages | where: "path", path | first %}
+                    {% if my_page.title %}
+                    <a class="nav-item nav-link" href="{{my_page.url | relative_url}}">{{ my_page.title | escape}}</a>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</nav>

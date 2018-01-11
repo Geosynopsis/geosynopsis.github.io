@@ -72,14 +72,9 @@ layout: default
 </div>
 <div class="col-sm-2">
     <div class="main-sidebar">
-        <div class="card">
-            <a class="twitter-timeline" href="https://twitter.com/geosynopsis?ref_src=twsrc%5Etfw" data-tweet-limit="2">Tweets
-                by abheeman</a>
-        </div>
-
         <div class="category-wrapper">
-            <div class="category-title">
-                <h4 class="h4">Post by Categories</h4>
+            <div class="card category-title">
+                <div class="card-title h4">Post by Categories</div>
             </div>
             {% for category in site.categories %}
             <div class="card category-card">
@@ -95,6 +90,10 @@ layout: default
                 </div>
             </div>
             {% endfor %}
+        </div>
+        <div class="card category-card">
+            <a class="twitter-timeline" href="https://twitter.com/geosynopsis?ref_src=twsrc%5Etfw" data-tweet-limit="2">Tweets
+                by geosynopsis</a>
         </div>
     </div>
 </div>
