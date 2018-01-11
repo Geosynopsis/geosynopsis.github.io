@@ -7,12 +7,18 @@ dl, dd, ol, ul, figure {
   margin: 0;
   padding: 0;
 }
-
+html {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+}
 
 
 /**
  * Basic styling
  */
+
 body {
   font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
   color: $text-color;

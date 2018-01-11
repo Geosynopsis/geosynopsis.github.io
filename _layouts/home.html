@@ -79,15 +79,16 @@ layout: default
             {% for category in site.categories %}
             <div class="card category-card">
                 <div class="card-title category-card-title">
-                    {{category[0]}}
+                    <h4 class="h4">{{category[0]}}</h4>
                 </div>
                 <div class="card-text">
-                    <ul>
+                    <div class="list-group">
                         {% for post in category[1] %}
-                        <li><a href="{{post.url | relative_url}}">{{post.title}}</a></li>
+                        <div class="list-group-item"><a href="{{post.url | relative_url}}">{{post.title}}</a></div>
                         {% endfor %}
-                    </ul>
+                    </div>
                 </div>
+
             </div>
             {% endfor %}
         </div>

@@ -1,6 +1,14 @@
 /**
  * Site header
  */
+.site-logo > svg {
+  display: inline-block;
+  vertical-align: middle;
+
+  path {
+    fill: #ffffff;
+  }
+}
 
 .site-header {
   border-top: 5px solid $grey-color-dark;
@@ -235,13 +243,13 @@
   color: $brand-color;
 }
 .category-card {
-  padding: 0.5vh;
+  padding: 0vh;
   margin-top: 0.5vh;
 }
 .category-card-title {
-  margin: 0.5rem;
+  margin: 1rem;
   color: $brand-color;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
 /**
