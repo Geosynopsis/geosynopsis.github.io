@@ -33,12 +33,17 @@ default_title_image: "/assets/images/post-bg.jpg"
 paginate: 5
 paginate_path: "/page:num/"
 
+
+# Recent post by category sidebar
+category_post_no: 4
+
 # Build settings
 markdown: kramdown
 #theme: minima
 plugins:
   - jekyll-feed
   - jekyll-paginate
+  - jekyll-category-pages
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
