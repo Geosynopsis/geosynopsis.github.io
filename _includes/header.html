@@ -27,6 +27,18 @@
                             escape | capitalize}}</a>
                         {% endif %}
                         {% endfor %}
+                        <div class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Categories
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                {% for category in site.categories %}
+                                <a class="dropdown-item" href="{{ site.url }}/category/{{ category | first | url_encode }}/index.html">{{category
+                                    | first | capitalize}}</a>
+                                {% endfor %}
+                            </div>
+                        </div>
                     </div>
                 </div>
                 {% endif %}

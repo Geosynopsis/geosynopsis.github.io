@@ -20,10 +20,15 @@ description: >- # this means to ignore newlines until "baseurl:"
   "Geospatial portal. Collection of interesting news and resources on technologies and author's work."
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://geosynopsis.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-permalink: "/post/:categories/:title.html"
+permalink: "/post/:title.html"
 google_analytics: UA-58726621-1
 twitter_username: geosynopsis
 github_username:  geosynopsis
+
+collections:
+  post_categories:
+    output: true
+    permalink: /category/:name/
 
 disqus:
   shortname: wwwgeosynopsiscom
@@ -33,6 +38,31 @@ default_title_image: "/assets/images/post-bg.jpg"
 # Pagination Settings
 paginate: 5
 paginate_path: "/page:num/"
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: pages
+    values:
+      layout: page
+  -
+    scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  -
+    scope:
+      path: ""
+      type: post_categories
+    values:
+      layout: category_index
+  -
+    scope:
+      path: "project"
+    values:
+      layout: project
 
 
 # Recent post by category sidebar
@@ -44,7 +74,7 @@ markdown: kramdown
 plugins:
   - jekyll-feed
   - jekyll-paginate
-  - jekyll-category-pages
+#  - jekyll-category-pages
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

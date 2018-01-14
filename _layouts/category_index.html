@@ -4,10 +4,12 @@ layout: default
 <div class="col-sm-5">
     <div class="home">
         <h2 class="h2">Category: {{page.title | capitalize}}</h2>
-        {% if page.paginator %}
-        {% assign paginator = page.paginator %}
         <div class="post-list">
-            {% for post in paginator.posts %}
+            {% for category in site.categories%}
+            {% assign temp_cat = category|first|downcase %}
+            {% assign temp_nam = page.name | downcase %}
+            {% if temp_cat == temp_nam %}
+            {% for post in category[1] %}
             <div class="card" style="margin-bottom: 1vh">
                 <div class="post-title-image">
                     {% if post.title_image %}
@@ -29,10 +31,10 @@ layout: default
                 </div>
             </div>
             {% endfor %}
+            {% endif %}
+            {% endfor %}
         </div>
-        {% include paginator.html %}
         <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
-        {% endif %}
     </div>
 </div>
 <div class="col-sm-2">
