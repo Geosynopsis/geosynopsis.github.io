@@ -33,6 +33,9 @@ collections:
 disqus:
   shortname: wwwgeosynopsiscom
 
+keep_files: [
+  '.well-known/acme-challenge'
+]
 # Index page specifics
 default_title_image: "/assets/images/post-bg.jpg"
 # Pagination Settings
