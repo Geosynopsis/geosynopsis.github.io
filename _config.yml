@@ -30,12 +30,13 @@ collections:
     output: true
     permalink: /category/:name/
 
-  well-known:
-    output: true
-    permalink: /.well-known/acme-challenge/
+include: [
+  ".well-known",
+]
 
 disqus:
   shortname: wwwgeosynopsiscom
+
 
 # Index page specifics
 default_title_image: "/assets/images/post-bg.jpg"
