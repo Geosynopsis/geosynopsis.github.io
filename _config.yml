@@ -33,9 +33,9 @@ collections:
 disqus:
   shortname: wwwgeosynopsiscom
 
-#include: [
-#  ".well-known"
-#]
+include: [
+  ".well-known/acme-challenge"
+]
 
 keep_files: [
   ".well-known/acme-challenge"
