@@ -37,6 +37,7 @@ The certificate can be generated manually with following command.
 certbot certonly --manual --server https://acme-v01.api.letsencrypt.org/directory -d domain.com -d www.domain.com
 {% endhighlight %}
 
+![Image]({{site.url}}/assets/images/posts/dockerlogo.png)
 
 After acceptance of the IP being logged, it instructs to put a file with the specified name and content at the particular path (http://domain_needing_certificate/.well-known/acme-challenge/name_of_file) for each domain that we want to generate a certificate.
 
