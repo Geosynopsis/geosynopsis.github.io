@@ -55,7 +55,7 @@ After you have published those files, the certificate is generated. Let's Encryp
 
 
 
-[jekyll](https://jekyllrb.com)
-[netlify](https://www.netlify.com)
-[googledomains](https://domains.google)
-[letsencrypt](https://letsencrypt.org)
+[jekyll]: https://jekyllrb.com
+[netlify]: https://www.netlify.com
+[googledomains]: https://domains.google
+[letsencrypt]: https://letsencrypt.org
