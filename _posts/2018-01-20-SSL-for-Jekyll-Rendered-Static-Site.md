@@ -4,7 +4,6 @@ title:  "Certificate for jekyll rendered static site"
 date:   2018-01-20 19:10
 categories: [development,]
 ---
-
 I have built this blog using [Jekyll][jekyll]. Jekyll is a simple, blog-aware, static site generator. GitHub Pages natively support Jekyll, and I was planning to publish the blog using Pages. But at the later part, I decided to publish the blog using Netlify as its more convenient from handling point-of-view. The build process in Netlify is comparatively more transparent than in Pages, and configurations like domain settings are quite comfortable for users.
 
 
@@ -27,6 +26,7 @@ The easiest way to create a certificate is by using CertBot which I installed wi
 add-apt-repository ppa:certbot/certbot
 apt-get update
 apt-get install certbot
+
 {% endhighlight %}
 
 
