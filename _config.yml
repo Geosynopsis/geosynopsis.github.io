@@ -34,6 +34,7 @@ collections:
 
 include: [
   ".well-known",
+  "_redirects"
 ]
 
 disqus:
@@ -81,6 +82,7 @@ markdown: kramdown
 plugins:
   - jekyll-feed
   - jekyll-paginate
+  - jekyll-sitemap
 #  - jekyll-category-pages
 
 # Exclude from processing.
