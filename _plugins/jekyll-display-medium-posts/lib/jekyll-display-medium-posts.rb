@@ -11,6 +11,7 @@ def generate(site)
       site.collections['medium_posts'] = jekyll_coll
 Feedjira::Feed.fetch_and_parse("https://medium.com/feed/" + ENV["MEDIUM_PUBLICATION"]).entries.each do |e|
         p "Title: #{e.title}, published on Medium #{e.url} #{e}"
+
         # Parse HTML to get first image
         page = Nokogiri::HTML(e[:content])
         p "#{page.css('img').first['src']}"
