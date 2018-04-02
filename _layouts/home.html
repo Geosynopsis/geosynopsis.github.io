@@ -3,6 +3,34 @@ layout: default
 ---
 <div class="col-sm-5">
     <div class="home">
+        {% if site.medium_posts.size > 0 %}
+        <h2 class="h2">Posts from Medium Publication</h2>
+        <div class="post-list">
+            {% for post in site.medium_posts %}
+            <!--{{post | jsonify}}-->
+            <div class="card" style="margin-bottom: 1vh">
+                <div class="post-title-image">
+                    {% if post.title_image %}
+                    <img class="card-img-top" src="{{post.title_image}}">
+                    {% else %}
+                    <img class="card-img-top" src="{{site.default_title_image | relative_url}}">
+                    {% endif %}
+                </div>
+                <div class="card-body">
+                    {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+                    <span class="post-meta">{{post.date | date: date_format}}</span>
+                    <h2 class="card-title"><a class="post-link" href="{{ post.url | relative_url}}">{{ post.title |
+                        escape }}</a></h2>
+                    <p class="card-text">{{ post.feed_content | strip_html | truncatewords:75 }}</p>
+                    <a href="{{post.url | relative_url}}" class="btn btn-outline-primary btn-lg" role="button"
+                       style="float: right">
+                        More...
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
         <h2 class="h2">Posts</h2>
         <div class="post-list">
             {% for post in paginator.posts %}
@@ -29,7 +57,7 @@ layout: default
             {% endfor %}
         </div>
         {% include paginator.html %}
-        <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+        <p class="rss-subscribe">subscribe <a href="{{ '/feed.xml' | relative_url }}">via RSS</a></p>
     </div>
 </div>
 <div class="col-sm-2">

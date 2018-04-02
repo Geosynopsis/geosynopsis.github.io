@@ -26,6 +26,8 @@ twitter_username: geosynopsis
 github_username:  geosynopsis
 
 collections:
+  medium_posts:
+    output: true
   post_categories:
     output: true
     permalink: /category/:name/
