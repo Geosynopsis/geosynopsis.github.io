@@ -5,11 +5,11 @@
         </div>
         {% for category in site.categories %}
         <div class="card category-card">
-            <div class="card-title category-card-title">
+            <div class="card-header category-card-title">
                 <h4 class="h4"><a href="{{ site.url }}/category/{{ category | first | url_encode }}/index.html">{{category
                     | first}}</a></h4>
             </div>
-            <div class="card-text">
+            <div class="card-body">
                 <div class="list-group">
                     {% for post in category[1] limit:{{site.category_post_no}} %}
                     <div class="list-group-item"><a href="{{post.url | relative_url}}">{{post.title}}</a></div>
