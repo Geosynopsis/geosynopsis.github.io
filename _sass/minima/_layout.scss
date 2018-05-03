@@ -1,6 +1,7 @@
 /**
  * Site header
  */
+
 .site-logo > svg {
   display: inline-block;
   vertical-align: middle;
@@ -117,7 +118,6 @@
     }
   }
 }
-
 
 
 /**
@@ -244,12 +244,33 @@
 }
 .category-card {
   padding: 0vh;
-  margin-top: 0.5vh;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
 }
 .category-card-title {
   margin: 1rem;
   color: $brand-color;
   text-transform: capitalize;
+}
+
+.link-list {
+  border-bottom: #eeeeff 1px solid;
+  margin-bottom: 0.5vh;
+  margin-top: 0.5vh;
+}
+
+.category-list-group {
+  padding-left: 0;
+  padding-right: 0;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.category-list-item {
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 /**
@@ -269,6 +290,9 @@
   }
 }
 
+.post-summary {
+  margin-bottom: 3vh;
+}
 .post-content {
   margin-bottom: $spacing-unit;
 

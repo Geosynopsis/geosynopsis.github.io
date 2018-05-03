@@ -1,20 +1,19 @@
 <div class="main-sidebar">
     <div class="category-wrapper">
-        <div class="card category-title">
-            <div class="card-title h4">Post by Categories</div>
-        </div>
         {% for category in site.categories %}
         <div class="card category-card">
-            <div class="card-title category-card-title">
+            <div class="card-header">
                 <h4 class="h4"><a href="{{ site.url }}/category/{{ category | first | url_encode }}/index.html">{{category
-                    | first}}</a></h4>
+                    | first | capitalize}}</a></h4>
             </div>
-            <div class="card-text">
-                <div class="list-group">
-                    {% for post in category[1] limit:{{site.category_post_no}} %}
-                    <div class="list-group-item"><a href="{{post.url | relative_url}}">{{post.title}}</a></div>
-                    {% endfor %}
-                </div>
+            <div class="card-body">
+                {% for post in category[1] limit:{{site.category_post_no}} %}
+                <ul class="list-group list-group-flush category-list-group">
+                    <li class="list-group-item category-list-item">
+                        <a href="{{post.url | relative_url}}" >{{post.title}}</a>
+                    </li>
+                </ul>
+                {% endfor %}
             </div>
 
         </div>

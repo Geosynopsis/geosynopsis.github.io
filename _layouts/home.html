@@ -8,7 +8,7 @@ layout: default
         <div class="post-list">
             {% for post in site.medium_posts %}
             <!--{{post | jsonify}}-->
-            <div class="card" style="margin-bottom: 1vh">
+            <div class="card post-summary">
                 <div class="post-title-image">
                     {% if post.title_image %}
                     <img class="card-img-top" src="{{post.title_image}}">
@@ -34,7 +34,7 @@ layout: default
         <h2 class="h2">Posts</h2>
         <div class="post-list">
             {% for post in paginator.posts %}
-            <div class="card" style="margin-bottom: 1vh">
+            <div class="card post-summary">
                 <div class="post-title-image">
                     {% if post.title_image %}
                     <img class="card-img-top" src="{{post.title_image | relative_url}}">

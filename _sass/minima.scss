@@ -12,8 +12,9 @@ $spacing-unit:     30px !default;
 
 $text-color:       #111 !default;
 $background-color: #fdfdfd !default;
+$background-image: url("/assets/images/bgcanvas.png") !default;
 $brand-color:      #0a507c !default;
-$link-color:       #1689b9 !default;
+$link-color:       #0a507c!default;
 
 $grey-color:       #828282 !default;
 $grey-color-light: lighten($grey-color, 40%) !default;
