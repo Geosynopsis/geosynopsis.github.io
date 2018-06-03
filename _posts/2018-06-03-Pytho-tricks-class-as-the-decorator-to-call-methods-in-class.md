@@ -97,7 +97,7 @@ However, I had many operations and to implement this mechanism for each of them 
 
 I opted for Class as Decorator. The reason behind choosing class decorator was simply because I had many preparatory operations which I wanted to break and organize better. The problem with using Class as Decorator, however, is that we cannot simply use it to class methods in basic form.
 
-Take following code for example. While running the code, the code will run for the function but fails for the class method. The instance reference or self itself isn't passed to to the decorator by default.
+Take following code for example. While running the code, the code will run for the function but fails for the class method. The instance reference or self itself isn't passed to the decorator by default.
 
 {% highlight python %}
 
@@ -174,6 +174,81 @@ A way around to pass the instance reference is by modifying the descriptor metho
             return res
 {% endhighlight %}
 
+So using this trick, the following script gives the implementation of chunk-wise operation on the methods of Raster class. Even though the methods in raster takes the image as input, the user shouldn't provision the image as it will automatically be provisioned by the decorator.
 
 {% highlight python %}
+
+import gdal
+import numpy
+
+
+class ChunkWiseOperation(object):
+    _cls=None
+    _obj=None
+
+    def __init__(self, func):
+        if callable(func) is False:
+            raise IOError(f"The `func` value {func}, is not callable")
+        self.func = func
+
+    def __get__(self, instance, owner):
+        self._cls = instance
+        self._obj = owner
+        return self.__call__
+    
+    def _get_indices_block_sizes(self):
+        x_list = numpy.arange(0, self._cls.x_size, self._cls.block_size)
+        y_list = numpy.arange(0, self._cls.y_size, self._cls.block_size)
+        x_block_sizes = numpy.append(x_list[1:] - x_list[:-1], self._cls.x_size - x_list[-1])
+        y_block_sizes = numpy.append(y_list[1:] - y_list[:-1], self._cls.y_size - y_list[-1])
+
+        x_mesh, y_mesh = numpy.meshgrid(
+            x_list, y_list,
+            sparse=False,
+            indexing='ij'
+        )
+
+        x_block_mesh, y_block_mesh = numpy.meshgrid(
+            x_block_sizes, y_block_sizes,
+            sparse=False,
+            indexing='ij',
+        )
+        return zip(x_mesh, y_mesh, x_block_mesh, y_block_mesh)
+            
+    def read_image(self, x, y, x_bloc, y_bloc):
+        pass
+    
+    def write_image(self, x, y, image):
+        pass
+    
+    def __call__(self, *args, **kwargs):
+        for x, y, x_bloc, y_bloc in self._get_indices_block_sizes():
+            image = self.read_image(x,y,x_bloc,y_bloc)
+            result = self.func(self._cls, image, *args, **kwargs)
+            self.write_image(x, y, result)
+
+
+
+class Raster(object):
+    block_size = 100
+    
+    def __init__(self, data_path):
+        self.data_source = gdal.Open(data_path)
+        self.band_count = self.data_source.RasterCount
+        self.x_size = self.data_source.RasterXSize
+        self.y_size = self.data_source.RasterYSize
+        self.geotransform = self.data_source.GetGeoTransform()
+        self.projection = self.data_source.GetProjection()
+
+    @ChunkWiseOperation
+    def band_ratio(self, image):
+        # Makes ratio between the bands and returns resulting image
+        pass
+    
+    @ChunkWiseOperation
+    def segmentation(self, image):
+        # Makes the segmentation and returns resulting image
+        pass
+
+    # ...
 {% endhighlight %}
