@@ -21,7 +21,7 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://www.geosynopsis.com" # the base hostname & protocol for your site, e.g. http://example.com
 permalink: "/post/:title.html"
-google_analytics: UA-58726621-1
+#google_analytics: UA-58726621-1
 twitter_username: geosynopsis
 github_username:  geosynopsis
 
