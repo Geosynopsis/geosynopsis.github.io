@@ -1,22 +1,19 @@
-<div class="main-sidebar">
-    <div class="category-wrapper">
-        {% for category in site.categories %}
-        <div class="card category-card">
-            <div class="card-header">
-                <h4 class="h4"><a href="{{ site.url }}/category/{{ category | first | url_encode }}/index.html">{{category
-                    | first | capitalize}}</a></h4>
-            </div>
-            <div class="card-body">
-                {% for post in category[1] limit:{{site.category_post_no}} %}
-                <ul class="list-group list-group-flush category-list-group">
-                    <li class="list-group-item category-list-item">
-                        <a href="{{post.url | relative_url}}" >{{post.title}}</a>
-                    </li>
-                </ul>
-                {% endfor %}
-            </div>
-
-        </div>
+{% for category in site.categories %}
+<div class="card mt-4 mb-4 shadow-sm">
+    <div class="card-header">
+        <h4 class="h4"><a href="{{ site.url }}/category/{{ category | first | url_encode }}/index.html">{{category
+            | first | capitalize}}</a></h4>
+    </div>
+    <div class="card-body">
+        {% for post in category[1] limit:{{site.category_post_no}} %}
+        <ul class="list-group list-group-flush category-list-group">
+            <li class="list-group-item category-list-item">
+                <a href="{{post.url | relative_url}}">{{post.title}}</a>
+            </li>
+        </ul>
         {% endfor %}
     </div>
+
 </div>
+{% endfor %}
+

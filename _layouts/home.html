@@ -8,7 +8,7 @@ layout: default
         <div class="post-list">
             {% for post in site.medium_posts %}
             <!--{{post | jsonify}}-->
-            <div class="card post-summary">
+            <div class="card shadow-sm mt-4 mb-4">
                 <div class="post-title-image">
                     {% if post.title_image %}
                     <img class="card-img-top" src="{{post.title_image}}">
@@ -16,7 +16,7 @@ layout: default
                     <img class="card-img-top" src="{{site.default_title_image | relative_url}}">
                     {% endif %}
                 </div>
-                <div class="card-body">
+                <div class="card-body post-summary-text">
                     {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
                     <span class="post-meta">{{post.date | date: date_format}}</span>
                     <h2 class="card-title"><a class="post-link" href="{{ post.url | relative_url}}">{{ post.title |
@@ -34,7 +34,7 @@ layout: default
         <h2 class="h2">Posts</h2>
         <div class="post-list">
             {% for post in paginator.posts %}
-            <div class="card post-summary">
+            <div class="card shadow-sm mb-4 mt-4">
                 <div class="post-title-image">
                     {% if post.title_image %}
                     <img class="card-img-top" src="{{post.title_image | relative_url}}">
@@ -42,7 +42,7 @@ layout: default
                     <img class="card-img-top" src="{{site.default_title_image | relative_url}}">
                     {% endif %}
                 </div>
-                <div class="card-body">
+                <div class="card-body post-summary-text">
                     {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
                     <span class="post-meta">{{post.date | date: date_format}}</span>
                     <h2 class="card-title"><a class="post-link" href="{{ post.url | relative_url }}">{{ post.title |
