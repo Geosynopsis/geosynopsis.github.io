@@ -26,6 +26,7 @@ $background-image: url("/assets/images/bgcanvas.png");
 html, body {
   width: 100%;
   overflow-x: hidden;
+  background: $background-image;
 }
 
 .site-header{
@@ -40,10 +41,9 @@ html, body {
   margin-top: -40vh;
   padding-top: 30vh;
   background: white;
-  background-image: url("/assets/images/bgcanvas.png");
-  background:  -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 30vh); /* FF3.6-15 */
-  background:  -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 30vh); /* Chrome10-25,Safari5.1-6 */
-  background:  linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 30vh); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 30vh, rgba(255,255,255,1) 60vh, rgba(255,255,255,0) 90vh); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 30vh, rgba(255,255,255,1) 60vh, rgba(255,255,255,0) 90vh); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 30vh, rgba(255,255,255,1) 60vh, rgba(255,255,255,0) 90vh); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
 }
 
