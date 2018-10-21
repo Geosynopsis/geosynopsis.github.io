@@ -2,7 +2,7 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 //$primary: purple;
-$primary: #4d0099;
+$primary: darkslateblue;
 $font-family-base: 1.25rem;
 $font-family-base: Tahoma, Geneva, sans-serif;
 $banner-background: url("/assets/images/home-bg.jpg");
@@ -26,21 +26,38 @@ $background-image: url("/assets/images/bgcanvas.png");
 html, body {
   width: 100%;
   overflow-x: hidden;
-  background: $background-image;
+  background-image: $background-image;
 }
-
+#main-nav {
+  z-index: 10;
+}
 .site-header{
+  top: 0;
   width: 100%;
-  height: 50vh;
+  height: 60vh;
+  position: fixed;
   overflow-x: hidden;
   overflow-y: hidden;
+  background: white;
   background-image: $banner-background;
 }
 
+.content-wrapper {
+  margin-top: 50vh;
+  position: absolute;
+  background-image: $background-image;
+  margin-right: 0;
+  margin-left: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .full-content{
-  margin-top: -40vh;
+  position:relative;
+  margin-top: -50vh;
   padding-top: 30vh;
   background: white;
+  background-image: $background-image;
   background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 30vh, rgba(255,255,255,1) 60vh, rgba(255,255,255,0) 90vh); /* FF3.6-15 */
   background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 30vh, rgba(255,255,255,1) 60vh, rgba(255,255,255,0) 90vh); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 30vh, rgba(255,255,255,1) 60vh, rgba(255,255,255,0) 90vh); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
@@ -68,9 +85,8 @@ html, body {
 .footer-wrapper {
   height: 30vh;
   width: 100%;
-  margin: 0 0 !important;
-  padding: 0 0 !important;
 }
+
 .contact-list, .social-media-list {
   list-style: none;
 }
