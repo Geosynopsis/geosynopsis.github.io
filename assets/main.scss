@@ -1,10 +1,12 @@
 ---
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
+@import url("https://fonts.googleapis.com/css?family=K2D|Righteous");
+
 //$primary: purple;
 $primary: darkslateblue;
-$font-family-base: 1.25rem;
-$font-family-base: Tahoma, Geneva, sans-serif;
+$font-size-base: 1.25rem;
+$font-family-base: 'K2D', sans-serif;
 $banner-background: url("/assets/images/home-bg.jpg");
 $background-image: url("/assets/images/bgcanvas.png");
 
@@ -21,6 +23,7 @@ $background-image: url("/assets/images/bgcanvas.png");
   color: white;
 }
 
+
 @import "bootstrap";
 
 html, body {
@@ -28,9 +31,15 @@ html, body {
   overflow-x: hidden;
   background-image: $background-image;
 }
+
+
 #main-nav {
-  z-index: 10;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
 }
+
 .site-header{
   top: 0;
   width: 100%;
@@ -40,6 +49,10 @@ html, body {
   overflow-y: hidden;
   background: white;
   background-image: $banner-background;
+}
+
+.site-title {
+  font-family: 'Righteous', cursive;
 }
 
 .content-wrapper {
@@ -81,10 +94,35 @@ html, body {
   border-radius: 5px;
 }
 
-
+.custom-sidebar {
+  position: sticky !important;
+  top: 10vh;
+}
 .footer-wrapper {
   height: 30vh;
   width: 100%;
+}
+
+$social-icon-height: 80px;
+
+.custom-social-icon {
+  height: $social-icon-height;
+  width: $social-icon-height;
+  border-radius: 50%;
+  display: inline-block;
+  text-align: center;
+  justify-content: center;
+  line-height: $social-icon-height;
+}
+.bg-twitter {
+  background: #00aced;
+}
+.bg-facebook {
+  background: #3B5998;
+}
+.social-media-icon-stack {
+  position:sticky !important;
+  top: 30vh;
 }
 
 .contact-list, .social-media-list {

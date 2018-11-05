@@ -1,7 +1,7 @@
 <header role="banner">
     {% assign default_paths = site.pages | map: "path" %}
     {% assign page_paths = site.header_pages | default: default_paths %}
-    <nav id="main-nav" class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav id="main-nav" class="navbar navbar-expand-lg navbar-dark bg-dark shadow position-absolute">
         <div class="row align-items-center justify-content-center" style="width: 100%">
             <div class="col-sm-7">
                 <div class="row">
@@ -9,7 +9,7 @@
                         {% include site-logo.svg fill="white"%}
                     </a>
                     <a class="navbar-brand" href="{{'/' | relative_url }}">
-                        <h2 class="h2">{{site.title}}</h2>
+                        <h2 class="h2 site-title">{{site.title}}</h2>
                     </a>
                     {% if page_paths %}
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -22,8 +22,9 @@
                             {% for path in page_paths %}
                             {% assign my_page = site.pages | where: "path", path | first %}
                             {% if my_page.title %}
-                            <a class="nav-item nav-link" href="{{my_page.url | relative_url}}">{{ my_page.title |
-                                escape | capitalize}}</a>
+                            <a class="nav-item nav-link" href="{{my_page.url | relative_url}}">
+                                {{ my_page.title |escape | capitalize}}
+                            </a>
                             {% endif %}
                             {% endfor %}
                             <div class="nav-item dropdown">
@@ -33,9 +34,9 @@
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     {% for category in site.categories %}
-                                    <a class="dropdown-item"
-                                       href="{{ site.url }}/category/{{ category | first | url_encode }}/index.html">{{category
-                                        | first | capitalize}}</a>
+                                    <a class="dropdown-item" href="{{ site.url }}/category/{{ category | first | url_encode }}/index.html">
+                                        {{category | first | capitalize}}
+                                    </a>
                                     {% endfor %}
                                 </div>
                             </div>
