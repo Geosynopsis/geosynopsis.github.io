@@ -1,7 +1,7 @@
-<div class="row align-items-center justify-content-center">
+<div class="row align-items-center justify-content-center p-3">
     <div class="col-sm-5" align="center">
         <ul class="contact-list text-light">
-            <li><h2 class="h2text-light">{{ site.title | escape }}</h2></li>
+            <li><h3 class="h3 text-light">{{ site.title | escape }}</h3></li>
             <li class="mt-1 mb-1">
                 {% if site.author %}
                 {{ site.author | escape }}
@@ -10,7 +10,7 @@
                 {% endif %}
             </li>
             {% if site.email %}
-            <li><a class="fa-lg text-light" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+            <li><a class="text-light" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
             {% endif %}
         </ul>
     </div>

@@ -5,7 +5,7 @@
 
 //$primary: purple;
 $primary: darkslateblue;
-$font-size-base: 1.25rem;
+//$font-size-base: 1.25rem;
 $font-family-base: 'K2D', sans-serif;
 $banner-background: url("/assets/images/home-bg.jpg");
 $background-image: url("/assets/images/bgcanvas.png");
@@ -33,6 +33,7 @@ html, body {
 
 footer {
   position: relative !important;
+  margin-top: 5vh;
   width: 100%;
   bottom: 0;
   min-height: 30vh;
@@ -41,8 +42,8 @@ footer {
 
 
 .title-svg {
-  width: $h1-font-size;
-  height: $h1-font-size;
+  width: $h2-font-size;
+  height: $h2-font-size;
 }
 
 #main-nav {

@@ -3,20 +3,17 @@
     {% assign page_paths = site.header_pages | default: default_paths %}
     <nav id="main-nav"
          class="navbar navbar-expand-lg navbar-dark row align-items-center justify-content-center bg-dark shadow position-absolute">
-        <div class="col-sm-7">
-            <a class="navbar-brand title-svg" href="{{'/' | relative_url }}">
-                {% include site-logo.svg fill="white"%}
-            </a>
-            <a class="navbar-brand" href="{{'/' | relative_url }}">
-                <h2 class="h2 site-title">{{site.title}}</h2>
-            </a>
+        <div class="col-sm-7 pt-3">
+                <a class="navbar-brand" href="{{'/' | relative_url }}">
+                    <h2 class="title-svg site-title">{% include site-logo.svg fill="white"%} {{site.title}}</h2>
+                </a>
             {% if page_paths %}
-            <button class="navbar-toggler mr-auto" type="button" data-toggle="collapse"
+            <button class="navbar-toggler float-right" type="button" data-toggle="collapse"
                     data-target="#navbarNavAltMarkup"
                     aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse mr-auto" id="navbarNavAltMarkup">
+            <div class="collapse navbar-collapse float-right" id="navbarNavAltMarkup">
                 <div class="navbar-nav ml-auto">
                     {% for path in page_paths %}
                     {% assign my_page = site.pages | where: "path", path | first %}
