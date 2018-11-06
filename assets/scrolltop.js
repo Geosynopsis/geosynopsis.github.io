@@ -2,7 +2,11 @@
  * Created by abheeman on 19.10.18.
  */
 // When the user scrolls the page, execute myFunction
-window.onscroll = function() {myFunction()};
+if (getWidth()>750) {
+  console.log(getWidth());
+  window.onscroll = function() {myFunction()};
+}
+
 
 // Get the header
 var navElement = document.getElementById("main-nav");
@@ -12,6 +16,16 @@ var logo = document.getElementById("layer101");
 var sticky = 60 * window.innerHeight/100; //60vh
 var nosticky = 2 * window.innerHeight/100; //5vh
 
+// Function to get width
+function getWidth() {
+  return Math.max(
+    document.body.scrollWidth,
+    document.documentElement.scrollWidth,
+    document.body.offsetWidth,
+    document.documentElement.offsetWidth,
+    document.documentElement.clientWidth
+  );
+}
 // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
 function myFunction() {
   if (window.pageYOffset > sticky) {

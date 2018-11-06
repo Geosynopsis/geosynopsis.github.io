@@ -9,7 +9,6 @@ $font-size-base: 1.25rem;
 $font-family-base: 'K2D', sans-serif;
 $banner-background: url("/assets/images/home-bg.jpg");
 $background-image: url("/assets/images/bgcanvas.png");
-
 .card-img-top {
   object-fit: none;
   height: 100%;
@@ -32,6 +31,19 @@ html, body {
   background-image: $background-image;
 }
 
+footer {
+  position: relative !important;
+  width: 100%;
+  bottom: 0;
+  min-height: 30vh;
+  background: $dark;
+}
+
+
+.title-svg {
+  width: $h1-font-size;
+  height: $h1-font-size;
+}
 
 #main-nav {
   top: 0;
@@ -57,6 +69,7 @@ html, body {
 
 .content-wrapper {
   margin-top: 50vh;
+  width: 100%;
   position: absolute;
   background-image: $background-image;
   margin-right: 0;
@@ -98,10 +111,8 @@ html, body {
   position: sticky !important;
   top: 10vh;
 }
-.footer-wrapper {
-  height: 30vh;
-  width: 100%;
-}
+
+
 
 $social-icon-height: 80px;
 
