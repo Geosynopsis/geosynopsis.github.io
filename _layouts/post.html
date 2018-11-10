@@ -3,8 +3,8 @@ layout: default
 ---
 {% include sticky-social-media.html %}
 <div class="col-sm-7">
-    <article class="row" itemscope itemtype="http://schema.org/BlogPosting">
-        <header class="col-sm-12">
+    <article class="row mr-1 ml-1" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="col-sm-12">
             <h1 class="h1 text-primary mb-2" itemprop="name headline">{{ page.title | escape }}</h1>
             <div class="pull-left align-text-bottom">
                 <strong>
@@ -17,17 +17,7 @@ layout: default
                     {% endif %}
                 </strong>
             </div>
-            <!--<div class="pull-right">-->
-                <!--{% assign full_url = site.url | append: page.url%}-->
-                <!--&lt;!&ndash;<span><strong>Share: </strong></span>&ndash;&gt;-->
-                <!--<a class="btn btn-primary" href='http://twitter.com/share?url={{ full_url }}&text={{page.title}}' target="_blank">-->
-                    <!--<i class="fa fa-twitter fa-lg social-icon"> Tweet </i>-->
-                <!--</a>-->
-                <!--<a class="btn btn-primary" href='https://www.facebook.com/sharer/sharer.php?u={{ full_urll }}' target="_blank">-->
-                    <!--<i class="fa fa-facebook fa-lg social-icon"> Share </i>-->
-                <!--</a>-->
-            <!--</div>-->
-        </header>
+        </div>
         <div class="col-sm-12 mt-2">
             <hr class="align-self-center">
         </div>
