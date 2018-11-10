@@ -2,40 +2,44 @@
 layout: default
 ---
 <div class="col-sm-5">
-    <div class="home">
-        <h2 class="h2">Category: {{page.title | capitalize}}</h2>
-        <div class="post-list">
-            {% for category in site.categories%}
-            {% assign temp_cat = category|first|downcase %}
-            {% assign temp_nam = page.name | downcase %}
-            {% if temp_cat == temp_nam %}
-            {% for post in category[1] %}
-            <div class="card shadow-sm mt-4 mb-4">
-                <div class="post-title-image">
-                    {% if post.title_image %}
-                    <img class="card-img-top" src="{{post.title_image | relative_url}}">
-                    {% else %}
-                    <img class="card-img-top" src="{{site.default_title_image | relative_url}}">
-                    {% endif %}
-                </div>
-                <div class="card-body post-summary-text">
-                    {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
-                    <span class="post-meta">{{post.date | date: date_format}}</span>
-                    <h2 class="card-title"><a class="post-link" href="{{ post.url | relative_url }}">{{ post.title |
-                        escape }}</a></h2>
-                    <p class="card-text">{{ post.excerpt | strip_html | truncatewords:75 }}</p>
-                    <a href="{{post.url | relative_url}}" class="btn btn-outline-primary btn-lg" role="button"
-                       style="float: right">
-                        More...
-                    </a>
-                </div>
-            </div>
-            {% endfor %}
-            {% endif %}
-            {% endfor %}
+    <div class="row mr-2 ml-2">
+        <div class="col-sm-12">
+            <h2 class="h2">Category: {{page.title | capitalize}}</h2>
         </div>
-        <p class="rss-subscribe">subscribe <a href="{{ '/feed.xml' | relative_url }}">via RSS</a></p>
+        {% for category in site.categories%}
+        {% assign temp_cat = category|first|downcase %}
+        {% assign temp_nam = page.name | downcase %}
+        {% if temp_cat == temp_nam %}
+        {% for post in category[1] %}
+        <div class="col-sm-12 shadow-sm mt-2 p-0">
+            <div class="post-title-image">
+                {% if post.title_image %}
+                <img class="card-img-top" src="{{post.title_image | relative_url}}">
+                {% else %}
+                <img class="card-img-top" src="{{site.default_title_image | relative_url}}">
+                {% endif %}
+            </div>
+            <div class="post-summary-text">
+                {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+                <span class="post-meta">{{post.date | date: date_format}}</span>
+                <h2><a class="post-link" href="{{ post.url | relative_url }}">{{ post.title |
+                    escape }}</a></h2>
+                <p>{{ post.excerpt | strip_html | truncatewords:75 }}</p>
+                <a href="{{post.url | relative_url}}" class="text-primary float-right">
+                    Read full story
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% endfor %}
     </div>
+    <div class="row mr-2 ml-2 mt-3">
+        <div class="col-sm-12">
+            <span><a href="{{ '/feed.xml' | relative_url }}"><i class="fa fa-rss"></i> RSS</a></span>
+        </div>
+    </div>
+
 </div>
 <div class="col-sm-2">
     {% include sidebar.html %}

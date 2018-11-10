@@ -1,36 +1,40 @@
 <div class="row align-items-center justify-content-center p-3">
-    <div class="col-sm-5" align="center">
-        <ul class="contact-list text-light">
-            <li><h3 class="h3 text-light">{{ site.title | escape }}</h3></li>
-            <li class="mt-1 mb-1">
+    <div class="col-sm-5 ml-2 mr-2" align="center">
+        <div class="row text-light">
+            <div class="col-sm-12">
+                <h3 class="h3 text-light">{{ site.title | escape }}</h3>
+            </div>
+            <div class="col-sm-12">
                 {% if site.author %}
                 {{ site.author | escape }}
                 {% else %}
                 {{ site.title | escape }}
                 {% endif %}
-            </li>
+            </div>
             {% if site.email %}
-            <li><a class="text-light" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+            <div class="col-sm-12">
+                <a class="text-light" href="mailto:{{ site.email }}">{{ site.email }}</a>
+            </div>
             {% endif %}
-        </ul>
+        </div>
     </div>
 
-    <div class="col-sm-2" align="center">
-        <ul class="social-media-list text-light">
+    <div class="col-sm-2 ml-2 mr-2" align="center">
+        <div class="row text-light">
             {% if site.github_username %}
-            <li class="mt-1 mb-1">
-                <a class="text-light" href="https://github.com/{{ site.github_username }}"><i
+            <div class="col-sm-12 mt-2 mb-2">
+                <a class="h6 text-light" href="https://github.com/{{ site.github_username }}"><i
                         class="fa fa-lg fa-github"> {{site.github_username}}</i> </a>
-            </li>
+            </div>
             {% endif %}
 
             {% if site.twitter_username %}
-            <li class="mt-1 mb-1">
-                <a class="text-light" href="https://twitter.com/{{ site.twitter_username }}"><i
+            <div class="col-sm-12 mt-2 mb-2">
+                <a class="h6 text-light" href="https://twitter.com/{{ site.twitter_username }}"><i
                         class="fa fa-lg fa-twitter"> {{site.twitter_username}}</i> </a>
-            </li>
+            </div>
             {% endif %}
-        </ul>
+        </div>
     </div>
 </div>
 

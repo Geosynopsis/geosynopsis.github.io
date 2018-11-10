@@ -5,7 +5,7 @@
 
 //$primary: purple;
 $primary: darkslateblue;
-//$font-size-base: 1.25rem;
+$font-size-base: 1.25rem;
 $font-family-base: 'K2D', sans-serif;
 $banner-background: url("/assets/images/home-bg.jpg");
 $background-image: url("/assets/images/bgcanvas.png");
@@ -42,15 +42,15 @@ footer {
 
 
 .title-svg {
-  width: $h2-font-size;
-  height: $h2-font-size;
+  width: $navbar-brand-font-size * 1.25;
+  height: $navbar-brand-font-size * 1.25;
 }
 
 #main-nav {
   top: 0;
   right: 0;
   left: 0;
-  z-index: 1030;
+  align-items: center;
 }
 
 .site-header{
@@ -93,15 +93,17 @@ footer {
 
 .post-title-image {
   opacity: 0.6;;
-  padding: 0.5vh;
   border-radius: 5px;
   height: 20vh;
 }
 
 .post-summary-text {
   margin-top: -10vh;
-  margin-right: 2vh;
-  margin-left: 2vh;
+  margin-right: 1vw;
+  margin-left: 1vw;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  padding-bottom: 5vh;
   background: white !important;
   opacity: 0.9;
   border: medium;

@@ -2,62 +2,39 @@
 layout: default
 ---
 <div class="col-sm-5">
-    <div class="home">
-        {% if site.medium_posts.size > 0 %}
-        <h2 class="h2">Posts from Medium Publication</h2>
-        <div class="post-list">
-            {% for post in site.medium_posts %}
-            <!--{{post | jsonify}}-->
-            <div class="card shadow-sm mt-4 mb-4">
-                <div class="post-title-image">
-                    {% if post.title_image %}
-                    <img class="card-img-top" src="{{post.title_image}}">
-                    {% else %}
-                    <img class="card-img-top" src="{{site.default_title_image | relative_url}}">
-                    {% endif %}
-                </div>
-                <div class="card-body post-summary-text">
-                    {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
-                    <span class="post-meta">{{post.date | date: date_format}}</span>
-                    <h2 class="card-title"><a class="post-link" href="{{ post.url | relative_url}}">{{ post.title |
-                        escape }}</a></h2>
-                    <p class="card-text">{{ post.feed_content | strip_html | truncatewords:75 }}</p>
-                    <a href="{{post.url | relative_url}}" class="btn btn-outline-primary btn-lg" role="button"
-                       style="float: right">
-                        More...
-                    </a>
-                </div>
-            </div>
-            {% endfor %}
+    <div class="row mr-2 ml-2">
+        <div class="col-sm-12">
+            <h2 class="h2">Posts</h2>
         </div>
-        {% endif %}
-        <h2 class="h2">Posts</h2>
-        <div class="post-list">
-            {% for post in paginator.posts %}
-            <div class="card shadow-sm mb-4 mt-4">
-                <div class="post-title-image">
-                    {% if post.title_image %}
-                    <img class="card-img-top" src="{{post.title_image | relative_url}}">
-                    {% else %}
-                    <img class="card-img-top" src="{{site.default_title_image | relative_url}}">
-                    {% endif %}
-                </div>
-                <div class="card-body post-summary-text">
-                    {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
-                    <span class="post-meta">{{post.date | date: date_format}}</span>
-                    <h2 class="card-title"><a class="post-link" href="{{ post.url | relative_url }}">{{ post.title |
-                        escape }}</a></h2>
-                    <p class="card-text">{{ post.excerpt | strip_html | truncatewords:75 }}</p>
-                    <a href="{{post.url | relative_url}}" class="btn btn-outline-primary btn-lg" role="button"
-                       style="float: right">
-                        More...
-                    </a>
-                </div>
+        {% for post in paginator.posts %}
+        <div class="col-sm-12 shadow-sm mt-2 p-0">
+            <div class="post-title-image">
+                {% if post.title_image %}
+                <img class="card-img-top" src="{{post.title_image | relative_url}}">
+                {% else %}
+                <img class="card-img-top" src="{{site.default_title_image | relative_url}}">
+                {% endif %}
             </div>
-            {% endfor %}
+            <div class="post-summary-text">
+                {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+                <span class="post-meta">{{post.date | date: date_format}}</span>
+                <h2><a class="post-link" href="{{ post.url | relative_url }}">{{ post.title |
+                    escape }}</a></h2>
+                <p>{{ post.excerpt | strip_html | truncatewords:75 }}</p>
+                <a href="{{post.url | relative_url}}" class="text-primary float-right">
+                    Read full story
+                </a>
+            </div>
         </div>
-        {% include paginator.html %}
-        <p class="rss-subscribe">subscribe <a href="{{ '/feed.xml' | relative_url }}">via RSS</a></p>
+        {% endfor %}
+    </div>
+    <div class="row mr-2 ml-2 mt-3">
+        <div class="col-sm-6">
+            <span><a href="{{ '/feed.xml' | relative_url }}"><i class="fa fa-rss"></i> RSS</a></span>
+        </div>
+        <div class="col-sm-6">
+            {% include paginator.html %}
+        </div>
     </div>
 </div>
 <div class="col-sm-2">
