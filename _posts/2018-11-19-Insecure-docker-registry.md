@@ -11,7 +11,7 @@ title_image: /assets/images/posts/dockerlogo.png
 It is fairly easy to host a docker registry locally. All we need to do is pull the docker image of registry and 
 host them. 
 
-{% highlight bash %}
+{% highlight python %}
     
     docker run -p 5000:5000 --name localregistry registry:2
     
@@ -19,7 +19,7 @@ host them.
 
 If we want to save the registry images at certain location, we can as well mount the directory as following:
 
-{% highlight bash %}
+{% highlight python %}
 
     docker run -p 5000:5000 --name localregistry -v /path/to/dir:/var/lib/registry registry:2
     
@@ -31,7 +31,7 @@ The registry should be available at http://localhost:5000.
 
 We can tell docker to use the locally hosted registry by tagging image.
 
-{% highlight bash %}
+{% highlight python %}
     
     docker pull nginx  # pulls image from the docker registry
     docker tag nginx localhost:5000/nginx   # Tags the nginx image to use registry localhost:5000
@@ -40,7 +40,7 @@ We can tell docker to use the locally hosted registry by tagging image.
 
 Now, we can push and pull the image from local registry with following commands.
 
-{% highlight bash %}
+{% highlight python %}
     
     docker push localhost:5000/nginx  # pushes the tagged image to the registry
     docker pull localhost:5000/nginx   # pulls the image from the local registry
@@ -52,7 +52,7 @@ If we want to share the registry in an internal network, we can do so by opening
 given internal network. If the internal ip of the registry host is 10.100.0.1, we can tag push and pull in following 
 way:
 
-{% highlight bash %}
+{% highlight python %}
     
     docker tag nginx 10.100.0.1:5000/nginx # Tags the nginx image to use registry 10.100.0.1:5000
     docker push 10.100.0.1:5000/nginx  # Pushes the tagged image to the registry
@@ -70,7 +70,7 @@ supports reverse proxy.
 Let's imagine, the internal domain that is pointing towards the server is registry.example.internal. The Nginx 
 configuration looks as follows:
  
-{% highlight bash %}
+{% highlight python %}
     # default.conf
     server {
         listen       80;
@@ -89,7 +89,7 @@ configuration looks as follows:
 Now, if we run nginx with given configuration, the registry should be available at http://registry.example.internal 
 and images can be tagged, pushed and pulled as follows:
 
-{% highlight bash %}
+{% highlight python %}
     
     docker tag nginx registry.example.internal/nginx # Tags the nginx image to use registry 10.100.0.1:5000
     docker push registry.example.internal/nginx  # Pushes the tagged image to the registry
@@ -106,7 +106,7 @@ insecure registry. But if it is only for internal/developmental purpose, one mig
 hassle to make the registry to communicate through https. In such a case, we can make docker to use insecure 
 registry with following command:
  
- {% highlight bash %}
+ {% highlight python %}
     
     dockerd --insecure-registry=registry.example.internal
     
@@ -114,7 +114,7 @@ registry with following command:
 
 Or we can edit /etc/docker/daemon.json to accomodate the insecure registry
 
-{% highlight bash %}
+{% highlight python %}
     # /etc/docker/daemon.json
     {
      ...
