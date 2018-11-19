@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Insecure docker registry"
-date:   2018-11-19 19:10
+date:   2018-11-19
 categories: [development, technology]
 tags: [docker, kubernetes]
 title_image: /assets/images/posts/dockerlogo.png
@@ -124,7 +124,7 @@ Or we can edit /etc/docker/daemon.json to accomodate the insecure registry
 {% endhighlight %}
 
 
-** Case with Kubernetes **
+**Case with Kubernetes**
 
 We have seen time and often a question appearing, how we can allow Kubernetes to use insecure registry. If Kubernetes
  is using the docker conainer platform, there is no especial settings you need to change for it to use the insecure 
