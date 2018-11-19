@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Insecure docker registry"
-date:   2018-06-03 19:10
+date:   2018-11-19 19:10
 categories: [development, technology]
 tags: [docker, kubernetes]
 title_image: /assets/images/posts/dockerlogo.png
