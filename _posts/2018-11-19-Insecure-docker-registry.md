@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Python tricks: class as the decorator to call methods in a class"
+title:  "Insecure docker registry"
 date:   2018-06-03 19:10
 categories: [development, technology]
 tags: [docker, kubernetes]
@@ -101,9 +101,10 @@ This is, in fact, the same procedure if we want to make registry available for e
 Only difference in that case is that we need to open the firewall for entire internet.
 
 ### Case of insecure registry
-Essentially, it is not advised to use the insecure registry with docker. But if it is only for internal/developmental
-purpose, one might not want to go through all the hassle to make the registry to communicate through https. In such a
- case, we can make docker to use insecure registry with following command:
+Essentially, it is not advised to use the insecure registry with docker and docker by itself doesn't entertain 
+insecure registry. But if it is only for internal/developmental purpose, one might not want to go through all the 
+hassle to make the registry to communicate through https. In such a case, we can make docker to use insecure 
+registry with following command:
  
  {% highlight bash %}
     
