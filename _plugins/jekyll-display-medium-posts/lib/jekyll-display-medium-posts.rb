@@ -1,15 +1,17 @@
 require 'feedjira'
 require 'nokogiri'
 require 'jekyll'
+require 'httparty'
 
 module Jekyll
   class JekyllDisplayMediumPosts < Generator
     safe true
     priority :high
-def generate(site)
+    def generate(site)
       jekyll_coll = Jekyll::Collection.new(site, 'medium_posts')
       site.collections['medium_posts'] = jekyll_coll
-Feedjira::Feed.fetch_and_parse("https://medium.com/feed/" + "geosynopsis").entries.each do |e|
+      feed = Feedjira.parse(HTTParty.get("https://medium.com/feed/" + "geosynopsis").body)
+      feed.entries.each do |e|
 
         p "Title: #{e.title}, published on Medium #{e.url} #{e}"
 
