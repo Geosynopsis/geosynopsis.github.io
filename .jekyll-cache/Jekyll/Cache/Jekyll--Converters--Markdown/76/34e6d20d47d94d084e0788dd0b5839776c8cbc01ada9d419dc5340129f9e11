@@ -1,0 +1,4 @@
+I"¿<h3 id="hosting-local-registry">Hosting local registry</h3>
+<p>It is fairly easy to host a docker registry locally. All we need to do is pull the docker image of registry and 
+host them.</p>
+:ET

@@ -11,7 +11,9 @@ source "https://rubygems.org"
 gem "jekyll", "~> 4.0.0"
 gem "feedjira"
 gem "nokogiri"
+gem "feedjira"
 gem 'jekyll-include-cache'
+gem "httparty"
 
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
 #gem "minima", "~> 2.0"
@@ -22,7 +24,7 @@ gem 'jekyll-include-cache'
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
-  gem "jekyll-feed", "~> 0.6"
+  gem "jekyll-feed"
   gem "jekyll-paginate"
   gem "jekyll-sitemap"
   # gem "jekyll-category-pages"
