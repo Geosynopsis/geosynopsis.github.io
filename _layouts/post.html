@@ -1,36 +1,31 @@
 ---
 layout: default
 ---
-{% include sticky-social-media.html %}
-<div class="col-sm-7">
-    <article class="row mr-1 ml-1" itemscope itemtype="http://schema.org/BlogPosting">
-        <div class="col-sm-12">
-            <h1 class="h1 text-primary mb-2" itemprop="name headline">{{ page.title | escape }}</h1>
-            <div class="pull-left align-text-bottom">
-                <strong>
-                    <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-                        {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
-                        {{ page.date | date: date_format }}
-                    </time>
-                    {% if page.author %}
-                    • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>
-                    {% endif %}
-                </strong>
-            </div>
-        </div>
-        <div class="col-sm-12 mt-2">
-            <hr class="align-self-center">
+<div class="container post">
+    <article itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post-title">
+            <h1 itemprop="name headline">{{ page.title | escape }}</h1>
+            <strong>
+                <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+                    {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+                    {{ page.date | date: date_format }}
+                </time>
+                {% if page.author %}
+                <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                    <span itemprop="name">{{ page.author }}</span>
+                </span>
+                {% endif %}
+            </strong>
         </div>
 
-        <div class="col-sm-12 mt-4" itemprop="articleBody">
+        <div class="mt-1" itemprop="articleBody">
             {{ content }}
         </div>
 
-        <div class="col-sm-12 mt-3 mb-2">
+        <div class="comment-box card p-1 border-rounded-1">
             {% if site.disqus.shortname %}
             {% include disqus_comments.html %}
             {% endif %}
         </div>
     </article>
 </div>
-

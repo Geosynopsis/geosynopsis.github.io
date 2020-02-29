@@ -1,18 +1,33 @@
-<div class="custom-sidebar mr-1 ml-1">
+<div class="sidebar">
     {% for category in site.categories %}
-    <div class="row shadow-sm mb-5 ">
-        <div class="col-sm-12 bg-dark text-center">
-            <a class=" h4 text-light" href="{{ site.url }}/category/{{ category | first | url_encode }}/index.html">
+    <div class="sidebar-title">
+        <h4>
+            <a href="{{ site.url }}/category/{{ category | first | url_encode }}/index.html">
                 {{category | first | upcase }}
             </a>
-        </div>
+        </h4>
+    </div>
+
+    <div class="sidebar-body">
         {% for post in category[1] limit:{{site.category_post_no}} %}
-        <div class="col-sm-12 mt-3 pb-3 border-bottom">
-            <a class="h6" href="{{post.url | relative_url}}">{{post.title}}</a>            </h6>
+        {% if post.title_image %}
+        {% assign title_img= {{post.title_image | relative_url}} %}
+        {% else %}
+        {% assign title_img = {{site.default_title_image | relative_url}} %}
+        {% endif %}
+        <div class="card" style="background: url('{{ title_img }}') no-repeat center #eee;">
+            <div class="card-head-wrapper">
+                <h4 class="p-1 m-auto">
+                    <a class="post-link" href="{{ post.url | relative_url }}">
+                        {{ post.title | escape }}
+                    </a>
+                </h4>
+            </div>
+
         </div>
         {% endfor %}
     </div>
+
+
     {% endfor %}
 </div>
-
-
