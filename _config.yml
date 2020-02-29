@@ -40,12 +40,14 @@ include: [
 disqus:
   shortname: wwwgeosynopsiscom
 
+sass:
+  style: compact
 
 # Index page specifics
 default_title_image: "/assets/images/post-bg.jpg"
 # Pagination Settings
 paginate: 5
-paginate_path: "/page:num/"
+paginate_path: "/page/:num/"
 
 defaults:
   -
@@ -74,7 +76,7 @@ defaults:
 
 
 # Recent post by category sidebar
-category_post_no: 4
+category_post_no: 8
 
 # Build settings
 markdown: kramdown
