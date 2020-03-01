@@ -10,12 +10,7 @@ source "https://rubygems.org"
 # Happy Jekylling!
 gem "jekyll", "~> 4.0.0"
 gem "feedjira"
-<<<<<<< HEAD
 gem "nokogiri", "~> 1.10.8"
-=======
-gem "nokogiri"
-gem "feedjira"
->>>>>>> master
 gem 'jekyll-include-cache'
 gem "httparty"
 
