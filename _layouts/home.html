@@ -4,7 +4,7 @@ layout: default
 <div class="container">
 
     {% for post in paginator.posts %}
-    <div class="card-with-shadow card-border mt-1">
+    <div class="card card-border mt-1">
         <div class="card-image-wrapper">
             {% if post.title_image %}
             <img class="card-image" src="{{post.title_image | relative_url}}">

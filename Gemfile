@@ -10,7 +10,7 @@ source "https://rubygems.org"
 # Happy Jekylling!
 gem "jekyll", "~> 4.0.0"
 gem "feedjira"
-gem "nokogiri"
+gem "nokogiri", "~> 1.10.8"
 gem 'jekyll-include-cache'
 
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
