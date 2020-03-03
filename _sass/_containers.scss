@@ -11,6 +11,7 @@ $secondary: gray;
 $info: #eaeaea;
 $light: white;
 
+$max-container-width: 1246px;
 $break-window-size: 992px;
 $header-height: 2.5rem;
 $header-y-padding: 1rem;
@@ -124,6 +125,10 @@ footer a {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  width: 100%;
+  max-width: $max-container-width;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .container {
@@ -168,16 +173,16 @@ footer a {
   // }
 
   .container {
-    width: 50%;
+    width: 60%;
   }
   .top-nav {
     position: fixed;
   }
   .sidebar {
-    width: 30%;
+    width: 40%;
   }
   .post {
-    width: 75%;
+    width: 80%;
   }
 }
 
