@@ -101,7 +101,4 @@ plugins:
 #   - vendor/ruby/
 
 # If we want to clean the system remember what we have installed
-# ruby-dev
-# ruby-bundler
-# ruby
-# Installations from bundler
+ruby-dev

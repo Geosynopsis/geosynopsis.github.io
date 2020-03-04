@@ -150,7 +150,7 @@ footer a {
 .sidebar {
   margin-top: calc(#{$header-height} + 2 * #{$header-y-padding});
   padding: 1rem;
-  border-left: 1px solid $info;
+  border-left: 1px groove $info;
 }
 
 .top-nav {
@@ -243,10 +243,7 @@ footer a {
   // border-radius: 5px;
 }
 
-.card-border {
-  padding-bottom: 1rem;
-}
-.card-border::before {
+.card-border::after {
   background: linear-gradient(to right, #bcbcbc 25%, #ffcd02 25%, #ffcd02 50%, #e84f47 50%, #e84f47 75%, #65c1ac 75%);
   position: absolute;
   content: "";
@@ -298,8 +295,8 @@ footer a {
   // line-height: 2rem;
   color: $primary;
   text-align: center;
-  // border-bottom: 1px solid $info;
-  // margin-bottom: 1rem;
+  border-bottom: 1px solid $info;
+  margin-bottom: 1rem;
 }
 
 .sidebar-title a {
@@ -312,12 +309,6 @@ footer a {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid $info;
-}
-
-.sidebar-body:last-child {
-  border:none;
 }
 
 .sidebar-body .card {

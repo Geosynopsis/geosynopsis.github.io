@@ -243,10 +243,7 @@ footer a {
   // border-radius: 5px;
 }
 
-.card-border {
-  padding-bottom: 1rem;
-}
-.card-border::before {
+.card-border::after {
   background: linear-gradient(to right, #bcbcbc 25%, #ffcd02 25%, #ffcd02 50%, #e84f47 50%, #e84f47 75%, #65c1ac 75%);
   position: absolute;
   content: "";
@@ -312,7 +309,7 @@ footer a {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding-bottom: 2rem;
+  margin-bottom: 2rem;
   border-bottom: 1px solid $info;
 }
 
