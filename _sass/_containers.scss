@@ -2,8 +2,10 @@
 @import url("https://fonts.googleapis.com/css?family=K2D|Righteous&display=swap");
 
 // Variables declaration
-$brand-font-stack: "Righteous", cursive;
-$font-stack: "K2D", sans-serif;
+$brand-font-stack: "Righteous",
+cursive;
+$font-stack: "K2D",
+sans-serif;
 
 $font-primary: #333;
 $primary: darkslateblue;
@@ -20,6 +22,7 @@ $header-bg-color: $light;
 $header-color: $primary;
 
 $footer-background: #343a40;
+$element-background: $light;
 
 // Tuning of bases
 h1,
@@ -33,6 +36,7 @@ h5 {
 a {
   color: $primary;
 }
+
 html,
 body {
   margin: 0 0;
@@ -86,6 +90,7 @@ footer a {
   border: 1px solid $primary;
   border-radius: 5px;
 }
+
 .border-bottom {
   border-bottom: 1px solid $primary;
 }
@@ -107,9 +112,11 @@ footer a {
   right: 0;
   left: 0;
 }
+
 .position-relative {
   position: relative;
 }
+
 .position-fixed {
   position: fixed;
 }
@@ -117,9 +124,11 @@ footer a {
 .float-left {
   float: left;
 }
+
 .float-right {
   float: right;
 }
+
 // Container and layout
 .content-wrapper {
   display: flex;
@@ -129,6 +138,7 @@ footer a {
   max-width: $max-container-width;
   margin-left: auto;
   margin-right: auto;
+  background-color: $element-background ;
 }
 
 .container {
@@ -140,6 +150,7 @@ footer a {
 .sidebar {
   margin-top: calc(#{$header-height} + 2 * #{$header-y-padding});
   padding: 1rem;
+  border-left: 1px solid $info;
 }
 
 .top-nav {
@@ -175,12 +186,15 @@ footer a {
   .container {
     width: 60%;
   }
+
   .top-nav {
     position: fixed;
   }
+
   .sidebar {
     width: 40%;
   }
+
   .post {
     width: 80%;
   }
@@ -190,6 +204,7 @@ footer a {
   .side-nav {
     display: none;
   }
+
   .sidebar {
     display: none;
   }
@@ -228,7 +243,10 @@ footer a {
   // border-radius: 5px;
 }
 
-.card-border::after {
+.card-border {
+  padding-bottom: 1rem;
+}
+.card-border::before {
   background: linear-gradient(to right, #bcbcbc 25%, #ffcd02 25%, #ffcd02 50%, #e84f47 50%, #e84f47 75%, #65c1ac 75%);
   position: absolute;
   content: "";
@@ -273,12 +291,15 @@ footer a {
   background-color: white;
   border-radius: 5px;
 }
+
 .sidebar-title {
-  background-color: $info;
+  // background-color: $info;
+  // border-radius: 5px;
+  // line-height: 2rem;
   color: $primary;
-  line-height: 4rem;
   text-align: center;
-  border-radius: 5px;
+  // border-bottom: 1px solid $info;
+  // margin-bottom: 1rem;
 }
 
 .sidebar-title a {
@@ -291,6 +312,12 @@ footer a {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid $info;
+}
+
+.sidebar-body:last-child {
+  border:none;
 }
 
 .sidebar-body .card {
@@ -318,6 +345,7 @@ footer a {
   justify-content: center;
   align-items: center;
 }
+
 .sidebar-body .card .card-head-wrapper:hover {
   background-color: rgba(255, 255, 255, 0.8);
 }
@@ -331,8 +359,7 @@ footer a {
   text-align: right;
 }
 
-.post-excerpt {
-}
+.post-excerpt {}
 
 .pagination {
   width: 100%;
@@ -345,6 +372,7 @@ footer a {
 .pagination a {
   text-decoration: none;
 }
+
 //Post view layouts
 
 .post-title {
@@ -353,18 +381,16 @@ footer a {
 }
 
 .post-title:after {
-  background: linear-gradient(
-    to right,
-    #ff5e5b 0%,
-    #ff5e5b 20%,
-    #93a5ff 20%,
-    #93a5ff 40%,
-    #d8d8d8 40%,
-    #d8d8d8 60%,
-    #00cecb 60%,
-    #00cecb 80%,
-    #ffed66 80%
-  );
+  background: linear-gradient(to right,
+      #ff5e5b 0%,
+      #ff5e5b 20%,
+      #93a5ff 20%,
+      #93a5ff 40%,
+      #d8d8d8 40%,
+      #d8d8d8 60%,
+      #00cecb 60%,
+      #00cecb 80%,
+      #ffed66 80%);
   position: absolute;
   content: "";
   height: 0.2rem;
