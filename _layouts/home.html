@@ -5,20 +5,20 @@ layout: default
 
     {% for post in paginator.posts %}
     <div class="card card-border mt-1">
-        <div class="card-image-wrapper">
-            {% if post.title_image %}
-            <img class="card-image" src="{{post.title_image | relative_url}}">
-            {% else %}
-            <img class="card-image" src="{{site.default_title_image | relative_url}}">
-            {% endif %}
-        </div>
-        <div class="card-body-wrapper">
-            {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
-            <h2>
+        {% if post.title_image %}
+        {% assign post_image = post.title_image %}
+        {% else %}
+        {% assign post_image = site.default_title_image %}
+        {% endif %}
+        <div class="card-image-wrapper" style="background-image: url('{{post_image | relative_url}}');">
+            <h2 class="card-title">
                 <a class="post-link" href="{{ post.url | relative_url }}">
                     {{ post.title | escape }}
                 </a>
             </h2>
+        </div>
+        <div class="card-body-wrapper">
+            {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
             <div class="post-meta">
                 <i class="icon-hour-glass"></i>
                 <span>{{post.date | date: date_format}}</span>
