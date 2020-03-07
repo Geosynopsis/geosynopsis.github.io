@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "AREA_OR_POINT: Raster space and it's effect on resampling"
-date:   2020-03-07 23:18
+date:   2020-03-07 20:00
 tag: Geospatial
 categories: [development]
 title_image: /assets/images/posts/PixelAsPoint.png
