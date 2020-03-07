@@ -1,33 +1,35 @@
-<div class="sidebar">
-    {% for category in site.categories %}
-    <div class="sidebar-title">
-        <h4>
-            <a href="{{ site.url }}/category/{{ category | first | url_encode }}/index.html">
-                {{category | first | upcase }}
-            </a>
-        </h4>
-    </div>
-
-    <div class="sidebar-body">
-        {% for post in category[1] limit:{{site.category_post_no}} %}
-        {% if post.title_image %}
-        {% assign title_img= {{post.title_image | relative_url}} %}
-        {% else %}
-        {% assign title_img = {{site.default_title_image | relative_url}} %}
-        {% endif %}
-        <div class="card" style="background: url('{{ title_img }}') no-repeat center #eee;">
-            <div class="card-head-wrapper">
-                <h4 class="p-1 m-auto">
-                    <a class="post-link" href="{{ post.url | relative_url }}">
-                        {{ post.title | escape }}
-                    </a>
-                </h4>
-            </div>
-
+<div id="mainSidebar" class="sidebar">
+    {% assign categories = site.categories | sort %}
+    {% for category in categories %}
+    <div class="sidebar-item">
+        <div class="sidebar-title">
+            <h4>
+                <a href="{{ site.url }}/category/{{ category | first | url_encode }}/index.html">
+                    {{category | first | upcase }}
+                </a>
+            </h4>
         </div>
-        {% endfor %}
-    </div>
 
+        <div class="sidebar-body">
+            {% for post in category[1] limit:{{site.category_post_no}} %}
+            {% if post.title_image %}
+            {% assign title_img= {{post.title_image | relative_url}} %}
+            {% else %}
+            {% assign title_img = {{site.default_title_image | relative_url}} %}
+            {% endif %}
+            <div class="card" style="background: url('{{ title_img }}') no-repeat center #eee;">
+                <div class="card-head-wrapper">
+                    <h4 class="p-1 m-auto">
+                        <a class="post-link" href="{{ post.url | relative_url }}">
+                            {{ post.title | escape }}
+                        </a>
+                    </h4>
+                </div>
+
+            </div>
+            {% endfor %}
+        </div>
+    </div>
 
     {% endfor %}
 </div>

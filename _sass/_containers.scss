@@ -141,7 +141,7 @@ footer a {
 
 .container {
   margin-top: calc(#{$header-height} + 2 * #{$header-y-padding});
-  padding: 2.5rem;
+  padding: 1rem;
   overflow-x: hidden;
 }
 
@@ -296,7 +296,6 @@ footer a {
 .card-body-wrapper {
   width: 92%;
   margin: auto;
-  // margin-top: -8rem;
   margin-bottom: 2rem;
   padding: 1rem;
   opacity: 0.8;
@@ -304,14 +303,15 @@ footer a {
   border-radius: 5px;
 }
 
+.sidebar-item:last-child {
+  top: calc(#{$header-height} + 3 * #{$header-y-padding});
+  position: sticky;
+  position: -webkit-sticky;
+}
+
 .sidebar-title {
-  // background-color: $info;
-  // border-radius: 5px;
-  // line-height: 2rem;
   color: $primary;
   text-align: center;
-  // border-bottom: 1px solid $info;
-  // margin-bottom: 1rem;
 }
 
 .sidebar-title a {
