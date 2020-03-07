@@ -1,6 +1,6 @@
 {% assign default_paths = site.pages | map: "path" %}
 {% assign page_paths = site.header_pages | default: default_paths %}
-<nav class="top-nav">
+<nav id="mainHeader" class="top-nav">
     <div class="brand">
         <a href="{{'/' | relative_url }}">
             <div class="brand-logo">
