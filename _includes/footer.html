@@ -1,43 +1,35 @@
 <footer>
-    <div class="footer-section">
-        <div class="footer-title">
-            <h3>
-                {{ site.title | escape }}
-            </h3>
-        </div>
-        <div class="footer-social-media">
-            {% if site.github_username %}
-            <div>
-                <h2>
-                    <a href="https://github.com/{{ site.github_username }}">
-                        <i class="icon-github"></i>
-                    </a>
-                </h2>
-            </div>
-            {% endif %}
-    
-            {% if site.twitter_username %}
-            <div>
-                <h2>
-                    <a href="https://twitter.com/{{ site.twitter_username }}">
-                        <i class="icon-twitter"></i>
-                    </a>                
-                </h2>
-            </div>
-            {% endif %}
-        </div>
-    </div>
-    <div class="footer-section">
-        <a href="{{'/about' | relative_url}}">
-            {% if site.author %}
-            {{ site.author | escape }}
-            {% else %}
+    <div>
+        <h3>
             {{ site.title | escape }}
-            {% endif %}
-        </a>
-        {% if site.email %}
+        </h3>
+    </div>
+    <a href="{{'/about' | relative_url}}">
+        {% if site.author %}
+        {{ site.author | escape }}
+        {% else %}
+        {{ site.title | escape }}
+        {% endif %}
+    </a>
+    {% if site.email %}
+    <div>
+        <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+    </div>
+    {% endif %}
+    <div>
+        {% if site.github_username %}
         <div>
-            <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+            <a href="https://github.com/{{ site.github_username }}">
+                <i class="icon-github"></i> {{site.github_username}}
+            </a>
+        </div>
+        {% endif %}
+
+        {% if site.twitter_username %}
+        <div>
+            <a href="https://twitter.com/{{ site.twitter_username }}">
+                <i class="icon-twitter"></i> {{site.twitter_username}}
+            </a>
         </div>
         {% endif %}
     </div>
