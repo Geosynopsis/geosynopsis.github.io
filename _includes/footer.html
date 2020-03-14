@@ -4,35 +4,33 @@
             {{ site.title | escape }}
         </h3>
     </div>
-    <div>
-        <a href="{{'/about' | relative_url}}">
-            {% if site.author %}
-            {{ site.author | escape }}
-            {% else %}
-            {{ site.title | escape }}
-            {% endif %}
-        </a>
-    </div>
+    <a href="{{'/about' | relative_url}}">
+        {% if site.author %}
+        {{ site.author | escape }}
+        {% else %}
+        {{ site.title | escape }}
+        {% endif %}
+    </a>
     {% if site.email %}
     <div>
         <a href="mailto:{{ site.email }}">{{ site.email }}</a>
     </div>
     {% endif %}
-    {% if site.github_username %}
     <div>
-        <a href="https://github.com/{{ site.github_username }}">
-            <i class="icon-github"></i>
-            {{site.github_username}}
-        </a>
-    </div>
-    {% endif %}
+        {% if site.github_username %}
+        <div>
+            <a href="https://github.com/{{ site.github_username }}">
+                <i class="icon-github"></i> {{site.github_username}}
+            </a>
+        </div>
+        {% endif %}
 
-    {% if site.twitter_username %}
-    <div>
-        <a href="https://twitter.com/{{ site.twitter_username }}">
-            <i class="icon-twitter"></i>
-            {{site.twitter_username}}
-        </a>
+        {% if site.twitter_username %}
+        <div>
+            <a href="https://twitter.com/{{ site.twitter_username }}">
+                <i class="icon-twitter"></i> {{site.twitter_username}}
+            </a>
+        </div>
+        {% endif %}
     </div>
-    {% endif %}
 </footer>
